@@ -16,7 +16,9 @@ The project includes a dedicated TSP class that encapsulates the logic for solvi
 **Total Distance Traveled:** The TSP class calculates and maintains the total distance traveled during the shortest route. The cumulative distance traveled can be retrieved.
 
 
+
 **Usage**
+
 **To use the TSP solver, follow these steps:**
 Create a list of points to be visited in the TSP. Each point should be defined with a name, x-coordinate, and y-coordinate.
 Initialize an instance of the TSP class, providing the list of points and the starting point or starting point name.
