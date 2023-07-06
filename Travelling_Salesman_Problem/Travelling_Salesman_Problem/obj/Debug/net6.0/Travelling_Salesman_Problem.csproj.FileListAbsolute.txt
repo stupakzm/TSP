@@ -1,0 +1,15 @@
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\bin\Debug\net6.0\Travelling_Salesman_Problem.exe
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\bin\Debug\net6.0\Travelling_Salesman_Problem.deps.json
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\bin\Debug\net6.0\Travelling_Salesman_Problem.runtimeconfig.json
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\bin\Debug\net6.0\Travelling_Salesman_Problem.dll
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\bin\Debug\net6.0\Travelling_Salesman_Problem.pdb
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.csproj.AssemblyReference.cache
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.AssemblyInfoInputs.cache
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.AssemblyInfo.cs
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.csproj.CoreCompileInputs.cache
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.dll
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\refint\Travelling_Salesman_Problem.dll
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.pdb
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\Travelling_Salesman_Problem.genruntimeconfig.cache
+C:\Users\TopAide\source\repos\Travelling_Salesman_Problem\Travelling_Salesman_Problem\obj\Debug\net6.0\ref\Travelling_Salesman_Problem.dll
