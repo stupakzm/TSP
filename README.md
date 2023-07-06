@@ -17,13 +17,21 @@ The project includes a dedicated TSP class that encapsulates the logic for solvi
 
 
 
+
 **Usage**
+
 
 **To use the TSP solver, follow these steps:**
 Create a list of points to be visited in the TSP. Each point should be defined with a name, x-coordinate, and y-coordinate.
+
 Initialize an instance of the TSP class, providing the list of points and the starting point or starting point name.
+
 Call the Start method to begin the calculation of the shortest route.
+
 Retrieve the sequence of points visited using the GetSequenceOfPoints method to get the ordered list of visited points.
+
 Retrieve the total distance traveled using the GetDistance method.
+
+
 
 Feel free to use this TSP solver in your projects to efficiently solve the Traveling Salesman Problem!
