@@ -1,4 +1,6 @@
-﻿List<Point> SetPoints(){
+using System.Text;
+
+List<Point> SetPoints(){
     return new List<Point> {
         new Point{ pointName = "A", x = 0, y = 0 },
         new Point{ pointName = "B", x = 1, y = 1 },
@@ -23,7 +25,7 @@ List<Point> pointList = new List<Point>() {
 
 //A(1,1) B(5,8) C(7,12) D(2,9) E(7,2) F(1,12) G(4,2).
 
-TSP problem = new TSP(SetPoints(), "B");
+TSP problem = new TSP(pointList, "F");
 
 problem.Start();
 Console.WriteLine(problem.GetSequenceOfPoints());
@@ -34,36 +36,32 @@ foreach (Point point in problem.GetSequenceOfPointsList()) {
 
 
 
-
-
-
-
 public class TSP {
     private List<Point> pointsList;
     private Point startPoint;
-    private string sequenceOfPoints;
+    private StringBuilder sequenceOfPoints;
     private List<Point> sequenceOfPointsList = new List<Point>();
     private float distance;
 
     public TSP(List<Point> pointsList, Point startPoint) {
         this.pointsList = pointsList;
         this.startPoint = startPoint;
-        sequenceOfPoints += startPoint.pointName;
+        sequenceOfPoints = new StringBuilder(startPoint.pointName);
         sequenceOfPointsList.Add(startPoint);
     }
+
     public TSP(List<Point> pointsList, string startPointName) {
         this.pointsList = pointsList;
         var tempList = pointsList.Where(x => x.pointName == startPointName).ToArray();
         if (tempList != null)
             startPoint = tempList[0];
-        sequenceOfPoints += startPointName;
+        sequenceOfPoints = new StringBuilder(startPointName);
         sequenceOfPointsList.Add(startPoint);
     }
 
     public void Start() {
-        FindShortestDistance(pointsList, startPoint);
+        FindShortestDistance(new List<Point>(pointsList), startPoint);
     }
-
 
     private float LengthBetweenTwo(Point point_1, Point point_2) {
         return (float)Math.Sqrt(Math.Pow((point_1.x - point_2.x), 2) + Math.Pow((point_1.y - point_2.y), 2));
@@ -73,30 +71,28 @@ public class TSP {
         float shortestDistance = float.MaxValue;
         Point nextPoint = new Point();
         currentListOfPoints.Remove(currentPoint);
-        if (currentListOfPoints.Count() > 1) {
-            for (int i = 0; i < currentListOfPoints.Count() - 1; i++) {
-                float lengthBetweenTwo = LengthBetweenTwo(currentPoint, currentListOfPoints[i]);
+
+        if (currentListOfPoints.Count > 0) {
+            foreach (Point point in currentListOfPoints) {
+                float lengthBetweenTwo = LengthBetweenTwo(currentPoint, point);
                 if (shortestDistance > lengthBetweenTwo) {
                     shortestDistance = lengthBetweenTwo;
-                    nextPoint = currentListOfPoints[i];
+                    nextPoint = point;
                 }
             }
+
+            TraveledDistance(shortestDistance);
+            AddToSequenceOfPoints(nextPoint.pointName);
+            sequenceOfPointsList.Add(nextPoint);
+            FindShortestDistance(currentListOfPoints, nextPoint);
         }
         else {
-            shortestDistance = LengthBetweenTwo(currentPoint, currentListOfPoints[0]);
-            TraveledDistance(shortestDistance);
-            AddToSequenceOfPoints(currentListOfPoints[0].pointName);
-            sequenceOfPointsList.Add(currentListOfPoints[0]);
-            shortestDistance = LengthBetweenTwo(currentListOfPoints[0], startPoint);
+            shortestDistance = LengthBetweenTwo(currentPoint, startPoint);
             TraveledDistance(shortestDistance);
             AddToSequenceOfPoints(startPoint.pointName);
             sequenceOfPointsList.Add(startPoint);
             return;
         }
-        TraveledDistance(shortestDistance);
-        AddToSequenceOfPoints(nextPoint.pointName);
-        sequenceOfPointsList.Add(nextPoint);
-        FindShortestDistance(currentListOfPoints, nextPoint);
     }
 
     private void TraveledDistance(float length) {
@@ -104,21 +100,23 @@ public class TSP {
     }
 
     private void AddToSequenceOfPoints(string pointName) {
-        sequenceOfPoints += " -> " + pointName;
+        sequenceOfPoints.Append(" -> ").Append(pointName);
     }
 
     public string GetSequenceOfPoints() {
-        return sequenceOfPoints;
+        return sequenceOfPoints.ToString();
     }
-    
+
     public List<Point> GetSequenceOfPointsList() {
-        return sequenceOfPointsList;
+        return new List<Point>(sequenceOfPointsList);
     }
 
     public float GetDistance() {
         return distance;
     }
 }
+
+
 
 
 public struct Point {
